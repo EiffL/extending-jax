@@ -1,7 +1,7 @@
-FROM nvidia/cuda:11.8.0-devel-ubuntu22.04
+FROM nvidia/cuda:11.8.0-devel-ubuntu20.04
 
 RUN apt-get update && \
-    DEBIAN_FRONTEND=noninteractive apt-get install -y git python3-pip
+    DEBIAN_FRONTEND=noninteractive apt-get install -y git python3-pip cmake
 
 RUN python3 -m pip install -U pip && \
     python3 -m pip install -U "jax[cuda]" -f https://storage.googleapis.com/jax-releases/jax_releases.html
